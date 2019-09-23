@@ -1,0 +1,5 @@
+#base=js
+userProfile.js
+vue-user-profile-field.js
+vue-user-profile-form.js
+vue-user-profile.js

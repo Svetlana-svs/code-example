@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          jcr:primaryType="cq:Dialog"
+          title="User Profile"
+          height="618"
+          width="700"
+          xtype="dialog">
+    <items jcr:primaryType="cq:TabPanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1 jcr:primaryType="cq:Panel" title="General">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <heading
+                            jcr:primaryType="cq:Widget"
+                            fieldDescription="Enter the Heading text."
+                            fieldLabel="Heading"
+                            name="./heading"
+                            xtype="textfield"/>
+                    <description
+                            jcr:primaryType="cq:Widget"
+                            defaultValue=""
+                            fieldDescription="Enter the Coming Soon Text Here."
+                            fieldLabel="Text"
+                            name="./description"
+                            xtype="richtext"/>
+                </items>
+            </tab1>
+            <tab2 jcr:primaryType="cq:Panel" title="Form Settings">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <formRenderMode
+                            jcr:primaryType="cq:Widget"
+                            defaultValue="modal"
+                            fieldLabel="Select edit mode"
+                            fieldDescription="Select display mode for editing fields:&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Modal - edit form opens in a modal window;&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Inline - fields themselves turn into editable elements."
+                            name="./formRenderMode"
+                            type="radio"
+                            xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <modal
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Modal"
+                                    value="modal"/>
+                            <inline
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Inline"
+                                    value="inline"/>
+                        </options>
+                    </formRenderMode>
+                    <firstName
+                            jcr:primaryType="cq:Widget"
+                            fieldLabel="Field 'First Name' display options"
+                            fieldDescription="Select 'required' if you want this field on a form to be required for user;
+                                        select 'optional' if you want this field on the form to be optional;
+                                        select 'disabled' if you do not want to show this field on the form."
+                            name="./firstName"
+                            defaultValue="required"
+                            type="select"
+                            xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <required
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Required"
+                                    value="required"/>
+                            <optional
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Optional"
+                                    value="optional" />
+                            <disabled
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Disabled"
+                                    value="disabled" />
+                        </options>
+                    </firstName>
+                    <middleName
+                            jcr:primaryType="cq:Widget"
+                            fieldLabel="Field 'Middle Name' display options"
+                            fieldDescription="Select 'required' if you want this field on a form to be required for user;
+                                        select 'optional' if you want this field on the form to be optional;
+                                        select 'disabled' if you do not want to show this field on the form."
+                            name="./middleName"
+                            defaultValue="disabled"
+                            type="select"
+                            xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <required
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Required"
+                                    value="required"/>
+                            <optional
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Optional"
+                                    value="optional" />
+                            <disabled
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Disabled"
+                                    value="disabled" />
+                        </options>
+                    </middleName>
+                    <lastName
+                            jcr:primaryType="cq:Widget"
+                            fieldLabel="Field 'Last Name' display options"
+                            fieldDescription="Select 'required' if you want this field on a form to be required for user;
+                                        select 'optional' if you want this field on the form to be optional;
+                                        select 'disabled' if you do not want to show this field on the form."
+                            name="./lastName"
+                            defaultValue="disabled"
+                            type="select"
+                            xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <required
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Required"
+                                    value="required"/>
+                            <optional
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Optional"
+                                    value="optional" />
+                            <disabled
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Disabled"
+                                    value="disabled" />
+                        </options>
+                    </lastName>
+                    <phone
+                            jcr:primaryType="cq:Widget"
+                            fieldLabel="Field 'Phone' display options"
+                            fieldDescription="Select 'required' if you want this field on a form to be required for user;
+                                        select 'optional' if you want this field on the form to be optional;
+                                        select 'disabled' if you do not want to show this field on the form."
+                            name="./phone"
+                            defaultValue="disabled"
+                            type="select"
+                            xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <required
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Required"
+                                    value="required"/>
+                            <optional
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Optional"
+                                    value="optional" />
+                            <disabled
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Disabled"
+                                    value="disabled" />
+                        </options>
+                    </phone>
+                    <birthDate
+                            jcr:primaryType="cq:Widget"
+                            fieldLabel="Field 'Birth Date' display options"
+                            fieldDescription="Select 'required' if you want this field on a form to be required for user;
+                                        select 'optional' if you want this field on the form to be optional;
+                                        select 'disabled' if you do not want to show this field on the form."
+                            name="./birthDate"
+                            defaultValue="disabled"
+                            type="select"
+                            xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <required
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Required"
+                                    value="required"/>
+                            <optional
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Optional"
+                                    value="optional" />
+                            <disabled
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Disabled"
+                                    value="disabled" />
+                        </options>
+                    </birthDate>
+                    <gender
+                            jcr:primaryType="cq:Widget"
+                            fieldLabel="Field 'User Gender' display options"
+                            fieldDescription="Select 'required' if you want this field on a form to be required for user;
+                                        select 'optional' if you want this field on the form to be optional;
+                                        select 'disabled' if you do not want to show this field on the form."
+                            name="./gender"
+                            defaultValue="disabled"
+                            type="select"
+                            xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <required
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Required"
+                                    value="required"/>
+                            <optional
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Optional"
+                                    value="optional" />
+                            <disabled
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Disabled"
+                                    value="disabled" />
+                        </options>
+                    </gender>
+                    <city
+                            jcr:primaryType="cq:Widget"
+                            fieldLabel="Field 'City' display options"
+                            fieldDescription="Select 'required' if you want this field on a form to be required for user;
+                                        select 'optional' if you want this field on the form to be optional;
+                                        select 'disabled' if you do not want to show this field on the form."
+                            name="./city"
+                            defaultValue="disabled"
+                            type="select"
+                            xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <required
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Required"
+                                    value="required"/>
+                            <optional
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Optional"
+                                    value="optional" />
+                            <disabled
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Disabled"
+                                    value="disabled" />
+                        </options>
+                    </city>
+                    <address
+                            jcr:primaryType="cq:Widget"
+                            fieldLabel="Field 'Address' display options"
+                            fieldDescription="Select 'required' if you want this field on a form to be required for user;
+                                        select 'optional' if you want this field on the form to be optional;
+                                        select 'disabled' if you do not want to show this field on the form."
+                            name="./address"
+                            defaultValue="disabled"
+                            type="select"
+                            xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <required
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Required"
+                                    value="required"/>
+                            <optional
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Optional"
+                                    value="optional" />
+                            <disabled
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Disabled"
+                                    value="disabled" />
+                        </options>
+                    </address>
+                </items>
+            </tab2>
+            <tab3 jcr:primaryType="cq:Panel" title="Images">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <labelNotice
+                            jcr:primaryType="cq:Widget"
+                        html="&lt;div class=&quot;x-form-item x-form-item-label&quot;&gt;Images to display the user gender. If the image is not loaded Gender value will be displayed as text (&quot;Male&quot; or &quot;Female&quot;).&lt;/div&gt;"
+                        xtype="label"/>
+                    <imageMale
+                        jcr:primaryType="cq:Widget"
+                        ddGroups="[media]"
+                        fieldLabel="Male"
+                        fileNameParameter="./imageMale/fileName"
+                        fileReferenceParameter="./imageMale/fileReference"
+                        height="{Long}200"
+                        name="./imageMale/file"
+                        title="Male"
+                        width="{Long}200"
+                        allowUpload="false"
+                        xtype="html5smartimage"/>
+                    <imageFemale
+                        jcr:primaryType="cq:Widget"
+                        ddGroups="[media]"
+                        fieldLabel="Female"
+                        fileNameParameter="./imageFemale/fileName"
+                        fileReferenceParameter="./imageFemale/fileReference"
+                        height="{Long}200"
+                        name="./imageFemale/file"
+                        title="Female"
+                        width="{Long}200"
+                        allowUpload="false"
+                        xtype="html5smartimage"/>
+                </items>
+            </tab3>
+            <tab4
+                    jcr:primaryType="cq:Widget"
+                    path="/apps/abbott/dialog/tab_component_style.infinity.json"
+                    xtype="cqinclude"/>
+        </items>
+    </items>
+</jcr:root>

@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ |  Copyright 2017 Adobe Systems Incorporated
+ |
+ |  Licensed under the Apache License, Version 2.0 (the "License");
+ |  you may not use this file except in compliance with the License.
+ |  You may obtain a copy of the License at
+ |
+ |      http://www.apache.org/licenses/LICENSE-2.0
+ |
+ |  Unless required by applicable law or agreed to in writing, software
+ |  distributed under the License is distributed on an "AS IS" BASIS,
+ |  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ |  See the License for the specific language governing permissions and
+ |  limitations under the License.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- ====================================================================== -->
+    <!-- P A R E N T  P R O J E C T  D E S C R I P T I O N                      -->
+    <!-- ====================================================================== -->
+    <parent>
+        <groupId>com.softwerke.com</groupId>
+        <artifactId>userprofile</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <!-- ====================================================================== -->
+    <!-- P R O J E C T  D E S C R I P T I O N                                   -->
+    <!-- ====================================================================== -->
+    <artifactId>userprofile.bundles</artifactId>
+    <packaging>pom</packaging>
+    <name>com.softwerke.com - userprofile.bundles</name>
+    <description>
+        Parent project for all OSGi bundles for 'UserProfile' project.
+    </description>
+
+    <modules>
+        <module>core</module>
+        <module>components</module>
+        <module>integration</module>
+    </modules>
+
+    <properties>
+        <build.info/>
+        <bundle.export/>
+        <bundle.import>*;resolution:=optional</bundle.import>
+        <bundle.embed>
+            commons-csv,
+            mysql-connector-java,
+            passay
+        </bundle.embed>
+        <bundle.private/>
+        <bundle.exclude.imports/>
+        <bundle.exclude.exports/>
+        <bundle.include.resource>{maven-resources}</bundle.include.resource>
+        <sling.model.packages/>
+        <jpa.properties/>
+
+        <hibernate.version>5.4.5.Final</hibernate.version>
+    </properties>
+
+    <!-- ====================================================================== -->
+    <!-- B U I L D   D E F I N I T I O N                                        -->
+    <!-- ====================================================================== -->
+    <build>
+        <plugins>
+             <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                 <!--
+                <executions>
+                    <execution>
+                        <id>generate-osgi-metadata-for-unittests</id>
+                        <goals>
+                            <goal>manifest</goal>
+                        </goals>
+                        <phase>process-classes</phase>
+                    </execution>
+                    <execution>
+                        <id>scr-metadata</id>
+                        <goals>
+                            <goal>manifest</goal>
+                        </goals>
+                        <configuration>
+                            <supportIncrementalBuild>true</supportIncrementalBuild>
+                        </configuration>
+                    </execution>
+                </executions>
+                -->
+                <configuration>
+                    <exportScr>true</exportScr>
+                    <instructions>
+                        <Build-Info>${build.info}</Build-Info>
+                        <Export-Package>${bundle.export}</Export-Package>
+                        <Import-Package>${bundle.import}</Import-Package>
+                        <Private-Package>${bundle.private}</Private-Package>
+                        <Excluded-Imports>${bundle.exclude.imports}</Excluded-Imports>
+                        <Excluded-Exports>${bundle.exclude.exports}</Excluded-Exports>
+                        <DynamicImport-Package>*</DynamicImport-Package>
+                        <Include-Resource>${bundle.include.resource}</Include-Resource>
+                        <Require-Bundle>com.sun.mail.javax.mail;bundle-version="1.5.6"</Require-Bundle>                        <Embed-Transitive>false</Embed-Transitive>
+                        <Embed-Dependency>${bundle.embed}</Embed-Dependency>
+                        <Embed-Directory>OSGI-INF/lib</Embed-Directory>
+                        <Embed-Transitive>false</Embed-Transitive>
+                        <Sling-Model-Packages>${sling.model.packages}</Sling-Model-Packages>
+                        <Meta-Persistence>${jpa.properties}</Meta-Persistence>
+                    </instructions>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.sling</groupId>
+               <artifactId>sling-maven-plugin</artifactId>
+                <configuration>
+                    <slingUrl>http://${aem.host}:${aem.port}/system/console</slingUrl>
+                    <deploymentMethod>WebConsole</deploymentMethod>
+                </configuration>
+            </plugin>
+
+            <!--
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-scr-plugin</artifactId>
+             </plugin>
+             -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+
+        <!-- ====================================================== -->
+        <!-- I N S T A L L  B A N D L E  P R O F I L E              -->
+        <!-- ====================================================== -->
+        <profile>
+            <id>installBundle</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.sling</groupId>
+                        <artifactId>sling-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>install-bundle</id>
+                                <goals>
+                                    <goal>install</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <!-- =========================================================== -->
+        <!-- I N S T A L L  B A N D L E  P U B L I S H  P R O F I L E    -->
+        <!-- =========================================================== -->
+        <profile>
+            <id>installBundlePublish</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.sling</groupId>
+                        <artifactId>sling-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>install-bundle-publish</id>
+                                <goals>
+                                    <goal>install</goal>
+                                </goals>
+                                <configuration>
+                                    <slingUrl>http://${aem.publish.host}:${aem.publish.port}/system/console</slingUrl>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+    <!-- ====================================================================== -->
+    <!-- D E P E N D E N C I E S                                                -->
+    <!-- ====================================================================== -->
+
+     <dependencies>
+
+         <!-- Private Adobe APIs -->
+         <dependency>
+             <groupId>com.adobe.aem</groupId>
+             <artifactId>uber-jar</artifactId>
+             <classifier>apis</classifier>
+         </dependency>
+
+         <!-- OSGi and Apache Felix -->
+         <dependency>
+             <groupId>org.osgi</groupId>
+             <artifactId>org.osgi.core</artifactId>
+             <scope>provided</scope>
+         </dependency>
+         <dependency>
+             <groupId>org.osgi</groupId>
+             <artifactId>org.osgi.service.component</artifactId>
+             <scope>provided</scope>
+         </dependency>
+         <dependency>
+             <groupId>org.osgi</groupId>
+             <artifactId>org.osgi.service.component.annotations</artifactId>
+             <scope>provided</scope>
+         </dependency>
+         <dependency>
+             <groupId>org.osgi</groupId>
+             <artifactId>org.osgi.service.metatype.annotations</artifactId>
+             <scope>provided</scope>
+         </dependency>
+         <dependency>
+             <groupId>org.osgi</groupId>
+             <artifactId>org.osgi.annotation</artifactId>
+             <scope>provided</scope>
+         </dependency>
+         <dependency>
+             <groupId>org.apache.geronimo.specs</groupId>
+             <artifactId>geronimo-atinject_1.0_spec</artifactId>
+             <scope>provided</scope>
+         </dependency>
+
+         <!-- Logging Dependencies -->
+         <dependency>
+             <groupId>org.slf4j</groupId>
+             <artifactId>slf4j-api</artifactId>
+         </dependency>
+
+         <!-- Apache common libraries -->
+         <dependency>
+             <groupId>org.apache.sling</groupId>
+             <artifactId>org.apache.sling.api</artifactId>
+         </dependency>
+         <dependency>
+             <groupId>org.apache.sling</groupId>
+             <artifactId>org.apache.sling.commons.mime</artifactId>
+         </dependency>
+         <dependency>
+             <groupId>org.apache.sling</groupId>
+             <artifactId>org.apache.sling.commons.json</artifactId>
+         </dependency>
+         <dependency>
+             <groupId>org.apache.sling</groupId>
+             <artifactId>org.apache.sling.commons.osgi</artifactId>
+         </dependency>
+         <dependency>
+             <groupId>org.apache.sling</groupId>
+             <artifactId>org.apache.sling.settings</artifactId>
+         </dependency>
+         <dependency>
+             <groupId>org.apache.sling</groupId>
+             <artifactId>org.apache.sling.jcr.jcr-wrapper</artifactId>
+         </dependency>
+         <dependency>
+             <groupId>org.apache.sling</groupId>
+             <artifactId>org.apache.sling.jcr.api</artifactId>
+         </dependency>
+         <dependency>
+             <groupId>org.apache.sling</groupId>
+             <artifactId>org.apache.sling.jcr.resource</artifactId>
+         </dependency>
+         <dependency>
+             <groupId>commons-collections</groupId>
+             <artifactId>commons-collections</artifactId>
+         </dependency>
+         <dependency>
+             <groupId>org.apache.commons</groupId>
+             <artifactId>commons-lang3</artifactId>
+         </dependency>
+         <dependency>
+             <groupId>commons-io</groupId>
+             <artifactId>commons-io</artifactId>
+         </dependency>
+         <dependency>
+             <groupId>org.apache.httpcomponents</groupId>
+             <artifactId>httpcore</artifactId>
+         </dependency>
+         <dependency>
+             <groupId>org.apache.httpcomponents</groupId>
+             <artifactId>httpclient</artifactId>
+         </dependency>
+
+         <!-- JCR and Apache JackRabbit -->
+         <dependency>
+             <groupId>javax.jcr</groupId>
+             <artifactId>jcr</artifactId>
+         </dependency>
+         <dependency>
+             <groupId>javax.servlet</groupId>
+             <artifactId>servlet-api</artifactId>
+         </dependency>
+
+         <!-- Servlet API -->
+         <dependency>
+             <groupId>javax.servlet</groupId>
+             <artifactId>jstl</artifactId>
+             <optional>false</optional>
+         </dependency>
+         <dependency>
+             <groupId>javax.servlet.jsp</groupId>
+             <artifactId>jsp-api</artifactId>
+             <optional>false</optional>
+             <scope>provided</scope>
+         </dependency>
+
+         <!-- Taglibs -->
+         <dependency>
+             <groupId>com.day.cq.wcm</groupId>
+             <artifactId>cq-wcm-taglib</artifactId>
+         </dependency>
+
+         <!-- JDOM | Required for User Import and Content Services. -->
+         <dependency>
+             <groupId>org.jdom</groupId>
+             <artifactId>jdom</artifactId>
+         </dependency>
+         <dependency>
+             <groupId>org.jsoup</groupId>
+             <artifactId>jsoup</artifactId>
+         </dependency>
+
+         <!-- Other dependencies -->
+         <dependency>
+             <groupId>org.apache.commons</groupId>
+             <artifactId>commons-csv</artifactId>
+         </dependency>
+         <dependency>
+             <groupId>org.apache.commons</groupId>
+             <artifactId>commons-text</artifactId>
+         </dependency>
+
+         <!-- Testing -->
+         <dependency>
+             <groupId>junit</groupId>
+             <artifactId>junit</artifactId>
+             <type>jar</type>
+             <scope>test</scope>
+             <optional>true</optional>
+         </dependency>
+         <dependency>
+             <groupId>org.easymock</groupId>
+             <artifactId>easymock</artifactId>
+             <scope>test</scope>
+         </dependency>
+         <dependency>
+             <groupId>org.easymock</groupId>
+             <artifactId>easymockclassextension</artifactId>
+             <scope>test</scope>
+         </dependency>
+         <dependency>
+             <groupId>org.powermock</groupId>
+             <artifactId>powermock-module-junit4</artifactId>
+             <scope>test</scope>
+         </dependency>
+         <dependency>
+             <groupId>org.powermock</groupId>
+             <artifactId>powermock-api-easymock</artifactId>
+             <scope>test</scope>
+         </dependency>
+         <dependency>
+             <groupId>httpunit</groupId>
+             <artifactId>httpunit</artifactId>
+             <scope>test</scope>
+         </dependency>
+    </dependencies>
+
+</project>

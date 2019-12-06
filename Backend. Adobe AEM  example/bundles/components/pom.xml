@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- ====================================================================== -->
+    <!-- P A R E N T  P R O J E C T  D E S C R I P T I O N                      -->
+    <!-- ====================================================================== -->
+    <parent>
+        <groupId>com.softwerke.com</groupId>
+        <artifactId>userprofile.bundles</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <!-- ====================================================================== -->
+    <!-- P R O J E C T  D E S C R I P T I O N                                   -->
+    <!-- ====================================================================== -->
+    <artifactId>userprofile.bundles.components</artifactId>
+    <packaging>bundle</packaging>
+    <name>com.softwerke.com - userprofile.components</name>
+    <description>
+        An OSGi Bundle containing all of the AEM components backend implementations for the 'UserProfile project.
+    </description>
+
+    <properties>
+        <bundle.export>
+            com.softwerke.com.components.*
+        </bundle.export>
+        <bundle.private>
+            com.softwerke.com.core.sling.*;
+            com.softwerke.com.components.user.registration.service.impl
+        </bundle.private>
+        <sling.model.packages>
+            com.softwerke.com.components
+        </sling.model.packages>
+    </properties>
+
+    <!-- ====================================================================== -->
+    <!-- D E P E N D E N C I E S                                                -->
+    <!-- ====================================================================== -->
+    <dependencies>
+        <!--    Project dependencies -->
+        <dependency>
+            <groupId>com.softwerke.com</groupId>
+            <artifactId>userprofile.bundles.core</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.softwerke.com</groupId>
+            <artifactId>userprofile.bundles.integration</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+</project>

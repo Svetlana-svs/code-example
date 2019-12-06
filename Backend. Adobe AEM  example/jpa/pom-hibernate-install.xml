@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- ====================================================================== -->
+    <!-- P A R E N T  P R O J E C T  D E S C R I P T I O N                      -->
+    <!-- ====================================================================== -->
+    <parent>
+        <groupId>com.softwerke.com</groupId>
+        <artifactId>userprofile</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <!-- ====================================================================== -->
+    <!-- P R O J E C T  D E S C R I P T I O N                                   -->
+    <!-- ====================================================================== -->
+    <artifactId>userprofile.jpa</artifactId>
+    <packaging>pom</packaging>
+    <name>com.softwerke.com - userprofile.jpa</name>
+    <description>Hibernate install package for UserProfile</description>
+
+    <profiles>
+        <!-- ============================================================ -->
+        <!-- I N S T A L L  H I B E R N A T E  P R O F I L E              -->
+        <!-- ============================================================ -->
+        <profile>
+            <id>installHibernate</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+
+            <dependencies>
+                <dependency>
+                    <groupId>rg</groupId>
+                    <artifactId>ra.jpa.hibernate.bundles</artifactId>
+                    <version>1.0-SNAPSHOT</version>
+                    <scope>import</scope>
+                    <type>pom</type>
+                </dependency>
+
+                <dependency>
+                    <groupId>javax.persistence</groupId>
+                    <artifactId>javax.persistence-api</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>org.hibernate</groupId>
+                    <artifactId>hibernate-core</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>org.hibernate</groupId>
+                    <artifactId>hibernate-osgi</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>mysql</groupId>
+                    <artifactId>mysql-connector-java</artifactId>
+                </dependency>
+            </dependencies>
+
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-dependency-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>copy</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>copy-dependencies</goal>
+                                </goals>
+                                <configuration>
+                                    <outputDirectory>
+                                        ${basedir}/src/main/content/jcr_root/apps/hibernate/install/
+                                    </outputDirectory>
+                                    <includeArtifactIds>
+                                        org.apache.servicemix.bundles.antlr,
+                                        classmate,
+                                        javax.activation,
+                                        javax.activation-api,
+                                        javax.persistence-api,
+                                        jaxb-api,
+                                        byte-buddy,
+                                        org.apache.servicemix.bundles.dom4j,
+                                        istack-commons-runtime,
+                                        FastInfoset,
+                                        <!-- stax-ex, -->
+                                        org.apache.servicemix.bundles.jaxb-runtime,
+                                        javassist,
+                                        jboss-logging,
+                                        hibernate-commons-annotations,
+                                        jandex,
+                                        javax.el-api,
+                                        org.apache.servicemix.bundles.javax-inject,
+                                        javax.interceptor-api,
+                                        cdi-api,
+                                        jboss-interceptors-api_1.2_spec,
+                                        jboss-transaction-api_1.2_spec,
+                                        mysql-connector-java,
+                                        hibernate-core,
+                                        hibernate-osgi
+                                    </includeArtifactIds>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>1.6.0</version>
+                        <executions>
+                            <execution>
+                                <phase>install</phase>
+                                <goals>
+                                    <goal>java</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <mainClass>com.softwerke.com.build.utils.HibernateInstaller</mainClass>
+                            <classpathScope>compile</classpathScope>
+                            <arguments>
+                                <!-- First argument - folder with properties files to be read -->
+                                <argument>${basedir}/src/main/content/jcr_root/apps/hibernate/install</argument>
+                                <!-- Second argument - output folder for converted XML files -->
+                                <argument>${basedir}/src/main/content/META-INF/resources/hibernate-bundles.xml</argument>
+                                <argument>${sling.user}</argument>
+                                <argument>${sling.password}</argument>
+                                <argument>http://${aem.host}:${aem.port}/system/console</argument>
+                            </arguments>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <!-- ============================================================ -->
+        <!-- I N S T A L L  H I B E R N A T E  P R O F I L E              -->
+        <!-- ============================================================ -->
+        <profile>
+            <id>installHibernatePublish</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+
+            <dependencies>
+                <dependency>
+                    <groupId>rg</groupId>
+                    <artifactId>ra.jpa.hibernate.bundles</artifactId>
+                    <version>1.0-SNAPSHOT</version>
+                    <scope>import</scope>
+                    <type>pom</type>
+                </dependency>
+
+                <dependency>
+                    <groupId>javax.persistence</groupId>
+                    <artifactId>javax.persistence-api</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>org.hibernate</groupId>
+                    <artifactId>hibernate-core</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>org.hibernate</groupId>
+                    <artifactId>hibernate-osgi</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>mysql</groupId>
+                    <artifactId>mysql-connector-java</artifactId>
+                </dependency>
+            </dependencies>
+
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-dependency-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>copy</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>copy-dependencies</goal>
+                                </goals>
+                                <configuration>
+                                    <outputDirectory>
+                                        ${basedir}/src/main/content/jcr_root/apps/hibernate/install/
+                                    </outputDirectory>
+                                    <includeArtifactIds>
+                                        org.apache.servicemix.bundles.antlr,
+                                        classmate,
+                                        javax.activation,
+                                        javax.activation-api,
+                                        javax.persistence-api,
+                                        jaxb-api,
+                                        byte-buddy,
+                                        org.apache.servicemix.bundles.dom4j,
+                                        istack-commons-runtime,
+                                        FastInfoset,
+                                        <!-- stax-ex, -->
+                                        org.apache.servicemix.bundles.jaxb-runtime,
+                                        javassist,
+                                        jboss-logging,
+                                        hibernate-commons-annotations,
+                                        jandex,
+                                        javax.el-api,
+                                        org.apache.servicemix.bundles.javax-inject,
+                                        javax.interceptor-api,
+                                        cdi-api,
+                                        jboss-interceptors-api_1.2_spec,
+                                        jboss-transaction-api_1.2_spec,
+                                        mysql-connector-java,
+                                        hibernate-core,
+                                        hibernate-osgi
+                                    </includeArtifactIds>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>1.6.0</version>
+                        <executions>
+                            <execution>
+                                <phase>install</phase>
+                                <goals>
+                                    <goal>java</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <mainClass>com.softwerke.com.build.utils.HibernateInstaller</mainClass>
+                            <classpathScope>compile</classpathScope>
+                            <arguments>
+                                <!-- First argument - folder with properties files to be read -->
+                                <argument>${basedir}/src/main/content/jcr_root/apps/hibernate/install</argument>
+                                <!-- Second argument - output folder for converted XML files -->
+                                <argument>${basedir}/src/main/content/META-INF/resources/hibernate-bundles.xml</argument>
+                                <argument>${sling.user}</argument>
+                                <argument>${sling.password}</argument>
+                                <argument>http://${aem.publish.host}:${aem.publish.port}/system/console</argument>
+                            </arguments>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+    <!-- ====================================================================== -->
+    <!-- D E P E N D E N C I E S                                                -->
+    <!-- ====================================================================== -->
+    <dependencies>
+        <dependency>
+            <groupId>com.adobe.aem</groupId>
+            <artifactId>uber-jar</artifactId>
+            <classifier>apis</classifier>
+        </dependency>
+        <dependency>
+            <groupId>javax.jcr</groupId>
+            <artifactId>jcr</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.softwerke.com</groupId>
+            <artifactId>userprofile.build-tools</artifactId>
+        </dependency>
+    </dependencies>
+</project>

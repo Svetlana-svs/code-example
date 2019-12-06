@@ -1,12 +1,12 @@
-package com.softwerke.com.integration.jpa.user.repository.impl;
+package com.package.name.integration.jpa.user.repository.impl;
 
-import com.softwerke.com.integration.jpa.core.exception.ApplicationPersistenceException;
-import com.softwerke.com.integration.jpa.core.exception.NoSuchEntityException;
-import com.softwerke.com.integration.jpa.core.exception.TooManyEntitiesException;
-import com.softwerke.com.integration.jpa.core.repository.AbstractRepository;
-import com.softwerke.com.integration.jpa.core.repository.AbstractResult;
-import com.softwerke.com.integration.jpa.core.repository.Condition;
-import com.softwerke.com.integration.jpa.user.repository.UserRepository;
+import com.package.name.integration.jpa.core.exception.ApplicationPersistenceException;
+import com.package.name.integration.jpa.core.exception.NoSuchEntityException;
+import com.package.name.integration.jpa.core.exception.TooManyEntitiesException;
+import com.package.name.integration.jpa.core.repository.AbstractRepository;
+import com.package.name.integration.jpa.core.repository.AbstractResult;
+import com.package.name.integration.jpa.core.repository.Condition;
+import com.package.name.integration.jpa.user.repository.UserRepository;
 import org.osgi.service.component.annotations.Component;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

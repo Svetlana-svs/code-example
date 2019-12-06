@@ -1,4 +1,4 @@
-package com.softwerke.com.build.utils;
+package com.package.name.build.utils;
 
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang3.StringEscapeUtils;

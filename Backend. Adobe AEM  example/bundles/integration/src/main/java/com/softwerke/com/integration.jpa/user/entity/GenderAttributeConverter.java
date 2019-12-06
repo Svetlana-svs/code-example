@@ -1,6 +1,6 @@
-package com.softwerke.com.integration.jpa.user.entity;
+package com.package.name.integration.jpa.user.entity;
 
-import com.softwerke.com.core.userdata.Gender;
+import com.package.name.core.userdata.Gender;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;

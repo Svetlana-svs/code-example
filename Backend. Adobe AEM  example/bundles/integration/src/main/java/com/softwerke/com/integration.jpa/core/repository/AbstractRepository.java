@@ -1,7 +1,7 @@
-package com.softwerke.com.integration.jpa.core.repository;
+package com.package.name.integration.jpa.core.repository;
 
-import com.softwerke.com.integration.jpa.core.exception.ApplicationPersistenceException;
-import com.softwerke.com.integration.jpa.core.service.JpaEntityManagerFactory;
+import com.package.name.integration.jpa.core.exception.ApplicationPersistenceException;
+import com.package.name.integration.jpa.core.service.JpaEntityManagerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

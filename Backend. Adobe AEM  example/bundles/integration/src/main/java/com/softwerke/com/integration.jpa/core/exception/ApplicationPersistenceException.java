@@ -1,4 +1,4 @@
-package com.softwerke.com.integration.jpa.core.exception;
+package com.package.name.integration.jpa.core.exception;
 
 /**
  * This exception should be thrown on internal problems with database connection or query execution failure

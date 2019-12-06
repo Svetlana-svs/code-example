@@ -1,4 +1,4 @@
-package com.softwerke.com.integration.jpa.core.exception;
+package com.package.name.integration.jpa.core.exception;
 
 
 /**

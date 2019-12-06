@@ -1,4 +1,4 @@
-package com.softwerke.com.integration.jpa.core.service;
+package com.package.name.integration.jpa.core.service;
 
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;

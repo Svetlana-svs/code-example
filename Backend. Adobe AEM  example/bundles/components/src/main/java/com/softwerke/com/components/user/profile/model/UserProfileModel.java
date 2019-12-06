@@ -1,8 +1,8 @@
-package com.softwerke.com.components.user.profile.model;
+package com.package.name.components.user.profile.model;
 
-import com.softwerke.com.core.annotation.Inherited;
-import com.softwerke.com.core.model.AbstractComponentModel;
-import com.softwerke.com.core.util.ValidationUtil;
+import com.package.name.core.annotation.Inherited;
+import com.package.name.core.model.AbstractComponentModel;
+import com.package.name.core.util.ValidationUtil;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import org.apache.sling.api.SlingHttpServletRequest;

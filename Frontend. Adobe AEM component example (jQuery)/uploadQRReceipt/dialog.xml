@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          jcr:primaryType="cq:Dialog"
+          title="Upload QR Receipt"
+          height="650"
+          xtype="dialog">
+    <items jcr:primaryType="cq:TabPanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                    jcr:primaryType="cq:Panel"
+                    title="General">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <heading
+                            jcr:primaryType="cq:Widget"
+                            fieldDescription="Enter the Heading text."
+                            fieldLabel="Heading"
+                            name="./heading"
+                            xtype="textfield"/>
+                    <description
+                            jcr:primaryType="cq:Widget"
+                            defaultValue=""
+                            fieldDescription="Enter the Coming Soon Text Here."
+                            fieldLabel="Description"
+                            name="./description"
+                            xtype="richtext"/>
+                    <type
+                            jcr:primaryType="cq:Widget"
+                            fieldDescription="Additional field for upload file mechanic identification (for example alco/no alco)."
+                            fieldLabel="Type of the upload file"
+                            name="./type"
+                            xtype="textfield"/>
+                    <qrScanningEnabled jcr:primaryType="cq:Widget"
+                                       fieldDescription="Enable scanning of qr receipts. If checked, uploaded receipts will be decoded and tab for realtime scanning will be added."
+                                       fieldLabel="Qr Scanner Enabled"
+                                       name="./qrScannerEnabled"
+                                       defaultValue="{Boolean}false"
+                                       xtype="selection"
+                                       type="checkbox">
+                        <listeners
+                                jcr:primaryType="nt:unstructured"
+                                loadcontent="function(component) {
+                                    var isChecked = false;
+                                    if (component.value) {
+                                        isChecked = component.value;
+                                    }
+                                    S.ClassicUINamespace.UploadQRReceipt.onSelectionChanged(component, isChecked);
+                                }"
+                                selectionchanged="function(component, val, isChecked) {
+                                    S.ClassicUINamespace.UploadQRReceipt.onSelectionChanged(component, isChecked);
+                             }"/>
+                    </qrScanningEnabled>
+                    <phoneConfirmationRequired
+                            jcr:primaryType="cq:Widget"
+                            defaultValue="no"
+                            fieldLabel="Phone confirmation required"
+                            name="./phoneConfirmationRequired"
+                            type="radio"
+                            xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <no
+                                    jcr:primaryType="nt:unstructured"
+                                    text="No"
+                                    value="no"/>
+                            <beforeUpload
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Before upload"
+                                    value="beforeUpload"/>
+                            <beforeSubmit
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Before submit"
+                                    value="beforeSubmit"/>
+                        </options>
+                    </phoneConfirmationRequired>
+                    <alterPromoId jcr:primaryType="cq:Widget"
+                                fieldDescription="A CRM Campaign (promo) can have one or more Sources (sites/platforms) configured in it. Usually there is only one, and  by default it is uploaded into the Source set up for the current website. Here you can specify which CRM Campaign Source the scan will be uploaded to."
+                                fieldLabel="Alternative promo ID"
+                                name="./alterPromoId"
+                                xtype="textfield"/>
+                </items>
+            </tab1>
+            <tab2
+                    jcr:primaryType="cq:Panel"
+                    title="File">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <fileMaxSize
+                            jcr:primaryType="cq:Widget"
+                            fieldLabel="Maximal file size, MB"
+                            allowBlank="{Boolean}false"
+                            name="./fileMaxSize"
+                            xtype="textfield"/>
+                    <acceptedFileExtensions
+                            jcr:primaryType="cq:Widget"
+                            fieldLabel="Available file types"
+                            fieldDescription="Available file extensions for uploaded receipt separated by comma."
+                            defaultValue="jpg, jpeg, gif, png"
+                            name="./fileAcceptedExtensions"
+                            xtype="textfield"/>
+                </items>
+            </tab2>
+            <tab3 jcr:primaryType="cq:Panel"
+                  itemId="qrScanningPanel"
+                  title="Qr Scanning">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <decodeIterations
+                            jcr:primaryType="cq:Widget"
+                            fieldLabel="Qr code decode iterations"
+                            fieldDescription="The count of repeated qr code decoding attempts for receipt uploading. If code isn't decoded, user is suggested to make another photo and upload it. After spending all attempts, receipt without decoded code will be sent to server."
+                            name="./qrDecodeIterations"
+                            defaultValue="0"
+                            allowBlank="true"
+                            allowNegative="false"
+                            allowDecimals="false"
+                            minValue="0"
+                            xtype="numberfield"/>
+                    <qrCodeFormatValidRule
+                            jcr:primaryType="cq:Widget"
+                            fieldDescription="Set a regular expression for validation QR code format."
+                            fieldLabel="QR code validation rule"
+                            name="./qrCodeFormatValidRule"
+                            xtype="textfield"/>
+                </items>
+            </tab3>
+            <tab5
+                    jcr:primaryType="cq:Panel"
+                    title="Form">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <textSetting
+                            jcr:primaryType="cq:Widget"
+                            defaultValue="disabled"
+                            fieldLabel="User text field"
+                            fieldDescription="Field for user text information input."
+                            name="./textSetting"
+                            type="radio"
+                            xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <disabled
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Disabled"
+                                    value="disabled"/>
+                            <optional
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Optional"
+                                    value="optional"/>
+                            <required
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Required"
+                                    value="required"/>
+                        </options>
+                    </textSetting>
+                    <formRenderMode
+                            jcr:primaryType="cq:Widget"
+                            defaultValue="Inline"
+                            fieldLabel="Select display mode"
+                            fieldDescription="Select display mode for uploader file:&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Modal - uploader file form opens in a modal window;&lt;br/&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Inline - uploader file fields open inline."
+                            name="./formRenderMode"
+                            type="radio"
+                            xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <modal
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Modal"
+                                    value="Modal"/>
+                            <inline
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Inline"
+                                    value="Inline"/>
+                        </options>
+                        <listeners
+                                jcr:primaryType="nt:unstructured"
+                                loadcontent="function(component) {
+                                    S.ClassicUINamespace.UploadQRReceipt.onRadioButtonChanged(component, component.value, 'formInlinePanel');
+                                }"
+                                selectionchanged="function(component, val) {
+                                    S.ClassicUINamespace.UploadQRReceipt.onRadioButtonChanged(component, val, 'formInlinePanel');
+                             }"/>
+                    </formRenderMode>
+                    <formInlinePanel
+                            jcr:primaryType="cq:Widget"
+                            collapsed="{Boolean}false"
+                            collapsible="{Boolean}false"
+                            title=""
+                            itemId="formInlinePanel"
+                            xtype="dialogfieldset">
+                        <items jcr:primaryType="cq:WidgetCollection">
+                            <formCollapsed
+                                    jcr:primaryType="cq:Widget"
+                                    fieldLabel="Display form collapse by default."
+                                    name="./formCollapsed"
+                                    defaultValue="{Boolean}false"
+                                    checkboxBoolTypeHint="{Boolean}true"
+                                    type="checkbox"
+                                    xtype="selection"/>
+                         </items>
+                    </formInlinePanel>
+                 </items>
+            </tab5>
+            <styleTab
+                    jcr:primaryType="cq:Widget"
+                    path="/apps/e/dialog/tab_component_style.infinity.json"
+                    xtype="cqinclude"/>
+        </items>
+    </items>
+</jcr:root>

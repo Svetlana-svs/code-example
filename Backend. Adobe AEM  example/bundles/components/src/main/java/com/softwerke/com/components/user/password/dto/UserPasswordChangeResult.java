@@ -1,6 +1,6 @@
-package com.softwerke.com.components.user.password.dto;
+package com.package.name.components.user.password.dto;
 
-import com.softwerke.com.integration.jpa.core.repository.AbstractResult;
+import com.package.name.integration.jpa.core.repository.AbstractResult;
 
 import java.time.LocalDateTime;
 import java.util.Map;

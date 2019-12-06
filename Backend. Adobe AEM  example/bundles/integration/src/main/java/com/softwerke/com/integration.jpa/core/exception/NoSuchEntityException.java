@@ -1,4 +1,4 @@
-package com.softwerke.com.integration.jpa.core.exception;
+package com.package.name.integration.jpa.core.exception;
 
 /**
  * This exception should be thrown if any persistence operation trying to manage the entity that does not exist

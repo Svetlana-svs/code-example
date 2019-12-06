@@ -1,10 +1,10 @@
-package com.softwerke.com.integration.jpa.user.repository;
+package com.package.name.integration.jpa.user.repository;
 
-import com.softwerke.com.integration.jpa.core.exception.ApplicationPersistenceException;
-import com.softwerke.com.integration.jpa.core.exception.NoSuchEntityException;
-import com.softwerke.com.integration.jpa.core.exception.TooManyEntitiesException;
-import com.softwerke.com.integration.jpa.core.repository.AbstractResult;
-import com.softwerke.com.integration.jpa.core.repository.Condition;
+import com.package.name.integration.jpa.core.exception.ApplicationPersistenceException;
+import com.package.name.integration.jpa.core.exception.NoSuchEntityException;
+import com.package.name.integration.jpa.core.exception.TooManyEntitiesException;
+import com.package.name.integration.jpa.core.repository.AbstractResult;
+import com.package.name.integration.jpa.core.repository.Condition;
 
 import java.util.List;
 import java.util.Map;

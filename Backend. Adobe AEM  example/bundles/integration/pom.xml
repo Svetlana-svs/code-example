@@ -3,7 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>com.softwerke.com</groupId>
+        <groupId>com.package.name</groupId>
         <artifactId>userprofile.bundles</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
@@ -12,7 +12,7 @@
     <!-- TODO: describe Hibernate installation procedure in readme including dependencies -->
     <artifactId>userprofile.bundles.integration</artifactId>
     <packaging>bundle</packaging>
-    <name>com.softwerke.com - userprofile.integration</name>
+    <name>com.package.name - userprofile.integration</name>
     <description>
         An OSGi Bundle containing all services for integration 'UserProfile' project with third part services (Jpa providers etc).
     </description>
@@ -32,7 +32,7 @@
         <bundle.exclude.exports/>
         <bundle.include.resource>{maven-resources}</bundle.include.resource>
         <sling.model.packages/>
-        <bundle.export>com.softwerke.com.integration.*</bundle.export>
+        <bundle.export>com.package.name.integration.*</bundle.export>
         <jpa.properties>META-INF/persistence.xml</jpa.properties>
     </properties>
 

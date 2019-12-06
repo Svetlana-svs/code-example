@@ -1,4 +1,4 @@
-package com.softwerke.com.core.util;
+package com.package.name.core.util;
 
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.lang3.StringUtils;

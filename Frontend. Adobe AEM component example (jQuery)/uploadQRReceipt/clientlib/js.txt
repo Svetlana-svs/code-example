@@ -1,0 +1,3 @@
+#base=js
+uploadQRReceipt.js
+

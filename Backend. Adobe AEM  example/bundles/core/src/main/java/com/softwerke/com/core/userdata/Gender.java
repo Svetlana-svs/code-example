@@ -1,4 +1,4 @@
-package com.softwerke.com.core.userdata;
+package com.package.name.core.userdata;
 
 import java.util.Arrays;
 import java.util.Objects;

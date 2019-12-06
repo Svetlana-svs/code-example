@@ -10,7 +10,7 @@
 
     <tag>
         <name>isMode</name>
-        <tag-class>com.softwerke.com.core.tag.WCMModeTag</tag-class>
+        <tag-class>com.package.name.core.tag.WCMModeTag</tag-class>
         <body-content>JSP</body-content>
         <attribute>
             <description>
@@ -29,7 +29,7 @@
             Compared to cq:setContentBundle, this one uses ProjectResourceBundleProvider.
         </description>
         <name>setContentBundle</name>
-        <tag-class>com.softwerke.com.core.tag.ProjectSetContentBundleTag</tag-class>
+        <tag-class>com.package.name.core.tag.ProjectSetContentBundleTag</tag-class>
         <body-content>empty</body-content>
         <attribute>
             <description>

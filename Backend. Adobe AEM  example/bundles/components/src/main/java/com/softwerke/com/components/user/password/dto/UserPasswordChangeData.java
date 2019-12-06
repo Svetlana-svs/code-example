@@ -1,4 +1,4 @@
-package com.softwerke.com.components.user.password.dto;
+package com.package.name.components.user.password.dto;
 
 
 /**

@@ -1,6 +1,6 @@
-package com.softwerke.com.components.user.profile.dto;
+package com.package.name.components.user.profile.dto;
 
-import com.softwerke.com.integration.jpa.core.repository.AbstractResult;
+import com.package.name.integration.jpa.core.repository.AbstractResult;
 
 import java.util.Map;
 import java.util.Optional;

@@ -1,4 +1,4 @@
-package com.softwerke.com.components.user.profile.model;
+package com.package.name.components.user.profile.model;
 
 
 import java.util.HashMap;

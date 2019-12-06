@@ -7,7 +7,7 @@
     <!-- P A R E N T  P R O J E C T  D E S C R I P T I O N                      -->
     <!-- ====================================================================== -->
     <parent>
-        <groupId>com.softwerke.com</groupId>
+        <groupId>com.package.name</groupId>
         <artifactId>userprofile.bundles</artifactId>
         <version>1.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
@@ -18,14 +18,14 @@
     <!-- ====================================================================== -->
     <artifactId>userprofile.bundles.core</artifactId>
     <packaging>bundle</packaging>
-    <name>com.softwerke.com - userprofile.core</name>
+    <name>com.package.name - userprofile.core</name>
     <description>
         An OSGi Bundle containing all of the backend CQ service implementations for the 'UserProfile' project.
     </description>
 
     <properties>
         <bundle.export>
-            com.softwerke.com.core.*
+            com.package.name.core.*
         </bundle.export>
         <bundle.private>
         </bundle.private>

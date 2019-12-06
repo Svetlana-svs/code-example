@@ -1,4 +1,4 @@
-package com.softwerke.com.integration.jpa.core.repository;
+package com.package.name.integration.jpa.core.repository;
 
 
 public class Condition {

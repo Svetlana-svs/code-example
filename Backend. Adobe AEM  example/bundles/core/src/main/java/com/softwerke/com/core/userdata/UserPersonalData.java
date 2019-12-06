@@ -1,6 +1,6 @@
-package com.softwerke.com.core.userdata;
+package com.package.name.core.userdata;
 
-import com.softwerke.com.core.util.ValidationUtil;
+import com.package.name.core.util.ValidationUtil;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.TypeAdapter;

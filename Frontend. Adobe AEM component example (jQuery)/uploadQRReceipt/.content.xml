@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          jcr:primaryType="cq:Component"
+          jcr:title="Receipt: Upload QR Receipt [CRM]"
+          jcr:description="Uploads QR code from a receipt with confirming phone in FNS."
+          componentGroup="e v3: Promo Mechanic"/>

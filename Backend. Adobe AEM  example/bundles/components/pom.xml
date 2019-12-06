@@ -7,7 +7,7 @@
     <!-- P A R E N T  P R O J E C T  D E S C R I P T I O N                      -->
     <!-- ====================================================================== -->
     <parent>
-        <groupId>com.softwerke.com</groupId>
+        <groupId>com.package.name</groupId>
         <artifactId>userprofile.bundles</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
@@ -17,21 +17,21 @@
     <!-- ====================================================================== -->
     <artifactId>userprofile.bundles.components</artifactId>
     <packaging>bundle</packaging>
-    <name>com.softwerke.com - userprofile.components</name>
+    <name>com.package.name - userprofile.components</name>
     <description>
         An OSGi Bundle containing all of the AEM components backend implementations for the 'UserProfile project.
     </description>
 
     <properties>
         <bundle.export>
-            com.softwerke.com.components.*
+            com.package.name.components.*
         </bundle.export>
         <bundle.private>
-            com.softwerke.com.core.sling.*;
-            com.softwerke.com.components.user.registration.service.impl
+            com.package.name.core.sling.*;
+            com.package.name.components.user.registration.service.impl
         </bundle.private>
         <sling.model.packages>
-            com.softwerke.com.components
+            com.package.name.components
         </sling.model.packages>
     </properties>
 
@@ -41,12 +41,12 @@
     <dependencies>
         <!--    Project dependencies -->
         <dependency>
-            <groupId>com.softwerke.com</groupId>
+            <groupId>com.package.name</groupId>
             <artifactId>userprofile.bundles.core</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>com.softwerke.com</groupId>
+            <groupId>com.package.name</groupId>
             <artifactId>userprofile.bundles.integration</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>

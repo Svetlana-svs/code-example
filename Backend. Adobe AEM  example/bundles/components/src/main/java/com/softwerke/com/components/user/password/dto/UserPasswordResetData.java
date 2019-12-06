@@ -1,6 +1,6 @@
-package com.softwerke.com.components.user.password.dto;
+package com.package.name.components.user.password.dto;
 
-import com.softwerke.com.core.userdata.UserWorkflowStatus;
+import com.package.name.core.userdata.UserWorkflowStatus;
 
 import java.time.LocalDateTime;
 

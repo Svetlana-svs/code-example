@@ -1,4 +1,4 @@
-package com.softwerke.com.integration.jpa.core.service;
+package com.package.name.integration.jpa.core.service;
 
 import com.google.common.collect.ImmutableMap;
 

@@ -1,18 +1,18 @@
-package com.softwerke.com.components.user.profile.servlet;
+package com.package.name.components.user.profile.servlet;
 
-import com.softwerke.com.components.user.profile.dto.UserProfileResult;
-import com.softwerke.com.core.cookie.CookieController;
-import com.softwerke.com.core.cookie.UserSessionCookie;
-import com.softwerke.com.core.exception.BadCookieException;
-import com.softwerke.com.core.exception.NoSuchBrandException;
-import com.softwerke.com.core.exception.ServiceNotConfigured;
-import com.softwerke.com.core.servlet.AbstractServlet;
-import com.softwerke.com.core.userdata.UserSessionModel;
-import com.softwerke.com.integration.jpa.core.exception.ApplicationPersistenceException;
-import com.softwerke.com.integration.jpa.core.exception.NoSuchEntityException;
-import com.softwerke.com.integration.jpa.core.exception.TooManyEntitiesException;
-import com.softwerke.com.integration.jpa.core.repository.Condition;
-import com.softwerke.com.integration.jpa.user.repository.UserRepository;
+import com.package.name.components.user.profile.dto.UserProfileResult;
+import com.package.name.core.cookie.CookieController;
+import com.package.name.core.cookie.UserSessionCookie;
+import com.package.name.core.exception.BadCookieException;
+import com.package.name.core.exception.NoSuchBrandException;
+import com.package.name.core.exception.ServiceNotConfigured;
+import com.package.name.core.servlet.AbstractServlet;
+import com.package.name.core.userdata.UserSessionModel;
+import com.package.name.integration.jpa.core.exception.ApplicationPersistenceException;
+import com.package.name.integration.jpa.core.exception.NoSuchEntityException;
+import com.package.name.integration.jpa.core.exception.TooManyEntitiesException;
+import com.package.name.integration.jpa.core.repository.Condition;
+import com.package.name.integration.jpa.user.repository.UserRepository;
 import com.google.gson.*;
 
 import org.apache.commons.lang3.StringUtils;

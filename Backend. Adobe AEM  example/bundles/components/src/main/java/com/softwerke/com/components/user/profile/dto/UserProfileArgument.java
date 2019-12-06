@@ -1,6 +1,6 @@
-package com.softwerke.com.components.user.profile.dto;
+package com.package.name.components.user.profile.dto;
 
-import com.softwerke.com.core.userdata.UserPersonalData;
+import com.package.name.core.userdata.UserPersonalData;
 
 import java.util.Map;
 

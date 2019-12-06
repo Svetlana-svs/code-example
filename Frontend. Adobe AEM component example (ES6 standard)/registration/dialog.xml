@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+        jcr:primaryType="cq:Dialog"
+        title="Registration"
+          height="700"
+          width="800"
+          xtype="dialog">
+    <items jcr:primaryType="cq:TabPanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1 jcr:primaryType="cq:Panel" title="General">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <heading
+                            jcr:primaryType="cq:Widget"
+                            fieldDescription="Enter the Heading text."
+                            fieldLabel="Heading"
+                            name="./heading"
+                            xtype="textfield"/>
+                    <description
+                            jcr:primaryType="cq:Widget"
+                            defaultValue=""
+                            fieldDescription="Enter the Coming Soon Text Here."
+                            fieldLabel="Text"
+                            name="./description"
+                            xtype="richtext"/>
+                    <agreementText
+                            jcr:primaryType="cq:Widget"
+                            defaultValue=""
+                            fieldDescription="Enter the text of agreement for collecting emails."
+                            fieldLabel="Agreement Text"
+                            name="./agreementText"
+                            xtype="richtext"/>
+                </items>
+            </tab1>
+            <tab2 jcr:primaryType="cq:Panel" title="Form Settings">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <name
+                            jcr:primaryType="cq:Widget"
+                            fieldLabel="Field 'Name' display options"
+                            fieldDescription="Select 'required' if you want this field on a form to be required for user;
+                                    select 'optional' if you want this field on the form to be optional;
+                                    select 'disabled' if you do not want to show this field on the form."
+                            name="./firstName"
+                            defaultValue="disabled"
+                            type="select"
+                            xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <required
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Required"
+                                    value="required"/>
+                            <optional
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Optional"
+                                    value="optional" />
+                            <disabled
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Disabled"
+                                    value="disabled" />
+                        </options>
+                    </name>
+                    <phone
+                            jcr:primaryType="cq:Widget"
+                            fieldLabel="Field 'Phone' display options"
+                            fieldDescription="Select 'required' if you want this field on a form to be required for user;
+                                    select 'optional' if you want this field on the form to be optional;
+                                    select 'disabled' if you do not want to show this field on the form."
+                            name="./phone"
+                            defaultValue="disabled"
+                            type="select"
+                            xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <required
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Required"
+                                    value="required"/>
+                            <optional
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Optional"
+                                    value="optional" />
+                            <disabled
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Disabled"
+                                    value="disabled" />
+                        </options>
+                    </phone>
+                    <about
+                            jcr:primaryType="cq:Widget"
+                            fieldLabel="Field 'About' display options"
+                            fieldDescription="Select 'required' if you want this field on a form to be required for user;
+                                    select 'optional' if you want this field on the form to be optional;
+                                    select 'disabled' if you do not want to show this field on the form."
+                            name="./about"
+                            defaultValue="disabled"
+                            type="select"
+                            xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <required
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Required"
+                                    value="required"/>
+                            <optional
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Optional"
+                                    value="optional" />
+                            <disabled
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Disabled"
+                                    value="disabled" />
+                        </options>
+                    </about>
+                    <rulesAgreement
+                            jcr:primaryType="cq:Widget"
+                            fieldLabel="'Rules' checkbox display options"
+                            fieldDescription="Select 'required' if you want the checkbox about site rules agreement on a form to be required for user;
+                                    select 'optional' if you want this field on the form to be optional;
+                                    select 'disabled' if you do not want to show this field on the form."
+                            name="./rulesAgreement"
+                            itemId="rulesAgreement"
+                            defaultValue="disabled"
+                            type="select"
+                            xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <required
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Required"
+                                    value="required"/>
+                            <optional
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Optional"
+                                    value="optional" />
+                            <disabled
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Disabled"
+                                    value="disabled" />
+                        </options>
+                        <listeners
+                                jcr:primaryType="nt:unstructured"
+                                selectionchanged="function(field, value, value) {
+                                    UUU.ClassicUINamespace.Registration.onSelectionChanged(field, value);}"/>
+                    </rulesAgreement>
+                    <rulesPageLink
+                            jcr:primaryType="cq:Widget"
+                            itemId="rulesPageLink"
+                            fieldLabel="Link to the Rules page"
+                            fieldDescription="Select a page with campaign rules or leave it empty if there is no such
+                                                    page."
+                            rootPath="/content"
+                            name="./rulesPageLink"
+                            showTitlesInTree="{Boolean}false"
+                            xtype="pathfield" />
+                    <pdaAndCommunicationAgreement
+                            jcr:primaryType="cq:Widget"
+                            fieldLabel="'PDA and Communication Agreement' checkbox display options"
+                            fieldDescription="Select 'required' if you want the checkbox about PDA and Communication Agreement on a form to be required for user;
+                                    select 'optional' if you want this field on the form to be optional;
+                                    select 'disabled' if you do not want to show this field on the form."
+                            name="./pdaAndCommunicationAgreement"
+                            itemId="pdaAndCommunicationAgreement"
+                            defaultValue="required"
+                            type="select"
+                            xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <required
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Required"
+                                    value="required"/>
+                            <optional
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Optional"
+                                    value="optional" />
+                            <disabled
+                                    jcr:primaryType="nt:unstructured"
+                                    text="Disabled"
+                                    value="disabled" />
+                        </options>
+                        <listeners
+                                jcr:primaryType="nt:unstructured"
+                                selectionchanged="function(field, value) {
+                                    UUU.ClassicUINamespace.Registration.onSelectionChanged(field, value);}"/>
+                    </pdaAndCommunicationAgreement>
+                    <pdaAndCommunicationAgreementPageLink
+                            jcr:primaryType="cq:Widget"
+                            itemId="pdaAndCommunicationAgreementPageLink"
+                            fieldLabel="Link to the PDA and Communication Agreement page"
+                            fieldDescription="Select a page with campaign PDA and Communication Agreement or leave it
+                                                empty if there is no such page."
+                            rootPath="/content"
+                            name="./pdaAndCommunicationAgreementPageLink"
+                            showTitlesInTree="{Boolean}false"
+                            xtype="pathfield" />
+                </items>
+            </tab2>
+            <tab3 jcr:primaryType="cq:Panel" title="Email Verification Settings">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <dataSource
+                            jcr:primaryType="cq:Widget"
+                            fieldLabel="Select Data Source"
+                            name="./dataSource"
+                            defaultValue="mysql"
+                            type="radio"
+                            xtype="selection">
+                        <options jcr:primaryType="cq:WidgetCollection">
+                            <crm
+                                    jcr:primaryType="nt:unstructured"
+                                    text="MongoDb"
+                                    value="mongo" />
+                            <mysql
+                                    jcr:primaryType="nt:unstructured"
+                                    text="MySQL"
+                                    value="mysql" />
+                        </options>
+                        <listeners
+                                jcr:primaryType="nt:unstructured"
+                                selectionchanged="function(field, value) {
+                                            var parentPanel = field.findParentByType('panel');
+                                            var mySqlSettings = parentPanel.getComponent('mySqlSettings');
+                                            value=='mysql' ? mySqlSettings.show() : mySqlSettings.hide();
+                                            }" />
+                    </dataSource>
+                    <mySqlSettings
+                            jcr:primaryType="cq:Widget"
+                            itemId="mySqlSettings"
+                            border="{Boolean}false"
+                            xtype="dialogfieldset">
+                        <items jcr:primaryType="cq:WidgetCollection">
+                            <isVerificationRequired
+                                    jcr:primaryType="cq:Widget"
+                                    fieldLabel="Email verification enabled"
+                                    fieldDescription="If checked, after successful form submit sends verification email.
+                                            to user."
+                                    defaultValue="{Boolean}true"
+                                    name="./isVerificationRequired"
+                                    itemId="verificationRequired"
+                                    type="checkbox"
+                                    xtype="selection">
+                                <listeners
+                                        jcr:primaryType="nt:unstructured"
+                                        selectionchanged="function(field, value, isChecked) {
+                                            UUU.ClassicUINamespace.Registration.onSelectionChanged(field, isChecked);}"/>
+                            </isVerificationRequired>
+                            <verificationPanel
+                                    jcr:primaryType="cq:Widget"
+                                    collapsed="{Boolean}false"
+                                    collapsible="{Boolean}false"
+                                    padding="0 20px 0 0"
+                                    title=""
+                                    itemId="verificationPanel"
+                                    xtype="dialogfieldset">
+                                <items jcr:primaryType="cq:WidgetCollection">
+                                    <verificationEmailTemplatePath
+                                            jcr:primaryType="cq:Widget"
+                                            itemId="verificationEmailTemplatePath"
+                                            fieldLabel="Template for verification email"
+                                            fieldDescription="Select the template for verification email from DAM."
+                                            rootPath="/content/dam/ucontent"
+                                            name="./verificationEmailTemplatePath"
+                                            showTitlesInTree="{Boolean}false"
+                                            width="100%"
+                                            xtype="pathfield" />
+                                    <verificationEmailBasicUrl
+                                            jcr:primaryType="cq:Widget"
+                                            itemId="verificationEmailBasicUrl"
+                                            fieldLabel="Path to a folder with resources for verification email template"
+                                            fieldDescription="Select the path to a folder with resources (css, images, etc.)
+                                                            which are used in verification email template."
+                                            rootPath="/content"
+                                            name="./verificationEmailBasicUrl"
+                                            showTitlesInTree="{Boolean}false"
+                                            width="100%"
+                                            xtype="pathfield" />
+                                    <autoLoginEnabled
+                                            jcr:primaryType="cq:Widget"
+                                            itemId="autoLoginEnabled"
+                                            fieldLabel="Autologin enabled"
+                                            fieldDescription="If checked, user will be set as authenticated user on the site after verification success."
+                                            name="./autoLoginEnabled"
+                                            type="checkbox"
+                                            xtype="selection"/>
+                                    <isVerificationSuccessEmailRequired
+                                            jcr:primaryType="cq:Widget"
+                                            itemId="isVerificationSuccessEmailRequired"
+                                            fieldLabel="Send 'Verification Success' email"
+                                            fieldDescription="Check if you want ot send email about success verification."
+                                            defaultValue="{Boolean}false"
+                                            name="./isVerificationSuccessEmailRequired"
+                                            type="checkbox"
+                                            xtype="selection">
+                                        <listeners
+                                                jcr:primaryType="nt:unstructured"
+                                                selectionchanged="function(field, value, isChecked) {
+                                                    UUU.ClassicUINamespace.Registration.onSelectionChanged(field, isChecked);}"/>
+                                    </isVerificationSuccessEmailRequired>
+                                    <verificationSuccessEmailTemplatePath
+                                            jcr:primaryType="cq:Widget"
+                                            itemId="verificationSuccessEmailTemplatePath"
+                                            fieldLabel="Template for 'Verification Success' email"
+                                            fieldDescription="Select the template for 'Verification Success' email from DAM."
+                                            disabled="{Boolean}true"
+                                            rootPath="/content/dam/ucontent"
+                                            name="./verificationSuccessEmailTemplatePath"
+                                            showTitlesInTree="{Boolean}false"
+                                            width="100%"
+                                            xtype="pathfield" />
+                                    <verificationSuccessEmailBasicUrl
+                                            jcr:primaryType="cq:Widget"
+                                            itemId="verificationSuccessEmailBasicUrl"
+                                            fieldLabel="Path to a folder with resources for 'Verification Success' email template"
+                                            fieldDescription="Select the path to a folder with resources (css, images, etc.)
+                                                                    which are used in 'Verification Success' email template."
+                                            disabled="{Boolean}true"
+                                            rootPath="/content"
+                                            name="./verificationSuccessEmailBasicUrl"
+                                            showTitlesInTree="{Boolean}false"
+                                            width="100%"
+                                            xtype="pathfield" />
+                                    <maxRegistrationAttemptsPerDay
+                                            jcr:primaryType="cq:Widget"
+                                            fieldLabel="Maximum frequency of form submit (attempts per day)"
+                                            fieldDescription="Maximum number of same email registration attempts per day.
+                                                                Zero is for no limit."
+                                            defaultValue="1"
+                                            name="./maxRegistrationAttemptsPerDay"
+                                            xtype="numberfield" />
+                                </items>
+                            </verificationPanel>
+                        </items>
+                    </mySqlSettings>
+                </items>
+            </tab3>
+            <tab4
+                    jcr:primaryType="cq:Widget"
+                    path="/apps/uapps/dialog/tab_component_style.infinity.json"
+                    xtype="cqinclude"/>
+        </items>
+    </items>
+</jcr:root>

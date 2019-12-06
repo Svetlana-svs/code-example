@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:description="* Goal: provide the UI for end-user to submit his/her email aka 'email subscription'.
+        &#13;User account is not created. User email must be verified by specific email with activation link.
+&#13;The data can be stored and validated on the CRM side, or can be stored on the DMP side.
+&#13;The emails to user can be sent by CRM or DMP as well.
+&#13;When data is stored within DMP, the corresponding admin UI (underground) should be configured
+&#13;
+&#13;Author can configure:
+&#13;- Data layer type (CRM/DMP)
+&#13;- Subscribe options (one or two checkboxes)
+&#13;- Number of emails received by user"
+    jcr:primaryType="cq:Component"
+    jcr:title="User: Registration"
+    componentGroup=".hidden"
+    allowedParents="*/parsys"/>

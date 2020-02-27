@@ -1,0 +1,189 @@
+/*
+@author Sergei Kharitonov
+@lastEdit Sergei Kharitonov
+*/
+
+.query-filter {
+    margin-bottom: 1rem;
+}
+
+.query-header {
+    margin: 1rem auto;
+}
+
+.filter-field {
+    margin: 0 auto 0.8rem auto;
+    font-size: 14px;
+    min-height:2rem;
+    width: 20rem;
+}
+
+.single-select > span,
+.textinput-select > span,
+.soundex-select > span {
+    background-color: #e9ecef;
+    display: block;
+    border-radius: 0.3rem 0.3rem 0 0;
+    height: 100%;
+    padding: 0.4rem 0.5rem;
+    width: 20rem;
+}
+
+.single-select > select,
+.textinput-select > input,
+.soundex-select > input {
+    display: block;
+    border: 0.15rem solid #e9ecef;
+    border-radius: 0 0 0.3rem 0.3rem;
+    width: 20rem;
+    padding: 0 0 0 0.3rem;
+    min-height: 2.1rem;
+}
+
+.multi-select > span,
+.checkbox-select > span,
+.radio-select > span,
+.yesno-select > span {
+    display:block;
+    background-color: #e9ecef;
+    height: 100%;
+    padding: 0.4rem 0.5rem;
+    border-radius:0.2rem 0.2rem 0 0;
+    width: 20rem;
+}
+
+.multi-select select {
+    border: 0.15rem solid #e9ecef;
+    padding: 0 1rem;
+    border-radius:0 0 0.2rem 0.2rem;
+    min-width:20rem
+}
+
+.radio-select > div,
+.checkbox-select > div{
+    max-height: 25rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    overscroll-behavior-x: none;
+}
+
+.search-result-container {
+    border: 0.15rem solid #918daf;
+    border-radius: 0.3rem;
+    padding: 1rem;
+    margin-bottom:1rem;
+}
+
+.search-result-container > .row {
+    border-bottom: 0.15rem solid #e9ecef;
+    margin-bottom: 0.3rem;
+
+}
+
+.search-result-container > .detail-button-container {
+    border: none;
+}
+
+.search-result-info {
+    text-align: left;
+    font-size: 16px;
+    color: #918daf;
+    font-weight: 500;
+}
+
+.counter {
+    font-size: 16px;
+    font-weight: 600;
+    color: #918daf;
+}
+
+.field-title {
+    text-align:right;
+}
+
+.field-content {
+    text-align: left;
+}
+
+.button-row,
+.query-list,
+.query-detail {
+    margin-bottom: 75px;
+}
+
+#query-filter-fields-container .button-row {
+    margin-bottom: 0.3rem;
+}
+
+.button-row .btn,
+.detail-button-container .btn,
+.result-head-controls .btn{
+    color: #918daf;
+    border: 0.15rem solid #918daf;
+    margin-bottom: 15px;
+    padding: 3px 5px;
+    width: 100%;
+}
+
+.button-row .btn:hover,
+.detail-button-container .btn:hover,
+.result-head-controls .btn:hover{
+    color: #ffffff;
+    background-color: #918daf;
+}
+
+.result-head-controls .btn {
+    max-width: 15rem;
+}
+
+.detail-button-container .btn{
+    max-width:20rem;
+    margin: 1rem auto 0.5rem auto;
+}
+
+.notification-container {
+    margin-top:10px;
+}
+
+.notification-container > div {
+    display: none;
+}
+
+.search-criteria {
+    margin-bottom: 1rem;
+}
+
+.criteria-header {
+    font-size: 16px;
+    color: #918daf;
+}
+
+.toggle-controls > span {
+    color: #918daf;
+    cursor: pointer;
+    margin-right: 0.3rem;
+}
+
+.paginationControls {
+    height: 2rem;
+    margin: 0.3rem auto;
+    color: #918daf;
+}
+
+.paginationControls .prev, .paginationControls .next {
+    color: #918daf;
+    border: 0.1rem solid #918daf;
+    padding: 0.2rem 0.7rem;
+}
+
+.paginationControls .prev:hover,
+.paginationControls .next:hover{
+    text-decoration: none;
+    color: #918daf;
+}
+
+.page-number {
+    color: #918daf;
+    border: 0.1rem solid #918daf;
+    padding: 0.2rem 0.7rem;
+}

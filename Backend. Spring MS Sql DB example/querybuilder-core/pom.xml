@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>ru.softwerke</groupId>
+		<artifactId>querybuilder-parent</artifactId>
+		<version>0.0.11-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>querybuilder-core</artifactId>
+	<name>${groupId} - ${artifactId}</name>
+	<description>Package containing core configuration and services implementations for the 'QueryBuilder2' project.</description>
+	<packaging>war</packaging>
+
+	<properties>
+	</properties>
+
+	<dependencies>
+		<!-- Project -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>querybuilder-integration</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.source}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<profiles>
+		<profile>
+			<id>cargo</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.codehaus.cargo</groupId>
+						<artifactId>cargo-maven2-plugin</artifactId>
+						<configuration>
+							<container>
+
+								<timeout>360000</timeout>
+								<containerId>tomcat9x</containerId>
+								<zipUrlInstaller>
+									<url>https://repo1.maven.org/maven2/org/apache/tomcat/tomcat/9.0.10/tomcat-9.0.10.zip</url>
+								</zipUrlInstaller>
+
+								<!--<log>target/cargo.log</log>
+                                <logLevel>debug</logLevel>-->
+							</container>
+							<configuration>
+								<properties>
+									<cargo.jvmargs>
+										-Xmx2048m
+										-Xms512m
+										-Xdebug
+										-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=9009
+										-Xnoagent
+										-Djava.compiler=NONE
+									</cargo.jvmargs>
+								</properties>
+								<files>
+									<copy>
+										<file>tomcat-users.xml</file>
+										<tofile>conf/tomcat-users.xml</tofile>
+										<configfile>true</configfile>
+										<overwrite>true</overwrite>
+									</copy>
+								</files>
+							</configuration>
+							<deployables>
+								<deployable>
+									<type>war</type>
+									<location>
+										${basedir}/target/${war.name}.war
+									</location>
+									<properties>
+										<context>${context.name}</context>
+									</properties>
+								</deployable>
+							</deployables>
+						</configuration>
+						<executions>
+							<execution>
+								<id>tomcat9x</id>
+								<phase>install</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+</project>

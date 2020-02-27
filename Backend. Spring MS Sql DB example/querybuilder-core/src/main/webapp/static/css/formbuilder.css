@@ -1,0 +1,346 @@
+/*
+@author Sergei Kharitonov
+@lastEdit Sergei Kharitonov
+*/
+
+.formbuilder-body {
+    overflow-x: hidden;
+    overscroll-behavior-x: none;
+}
+
+.container.builder-controls,
+.container.working-area{
+    max-width: 92%;
+}
+
+.btn:focus {
+    box-shadow: none;
+}
+
+input:focus {
+    box-shadow:none;
+    outline: none;
+}
+
+.builder-controls {
+    margin-top: 20px;
+}
+
+.working-area {
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+.builder-controls h3 {
+    font-size: 1.2rem;
+}
+
+.button-container .btn {
+    color: #918daf;
+    border: 0.15rem solid #918daf;
+    margin-bottom: 0.1rem;
+    padding: 1px 5px;
+    width: 100%;
+}
+
+.button-container .btn:hover {
+    color: #ffffff;
+    background-color: #918daf;
+}
+
+.input-label {
+    background-color: #e9ecef;
+    display:inline-flex;
+    width:auto;
+    float:left;
+    border-radius: 0.3rem 0 0 0.3rem;
+    height:100%;
+    padding: 0.4rem 0.5rem;
+}
+
+.textinput-container input {
+    min-height: 2.1rem;
+    border: 0.15rem solid #e9ecef;
+    border-radius: 0 0.3rem 0.3rem 0;
+    padding-left: 0.3rem;
+    flex-grow: 100;
+}
+
+
+.textinput-container {
+    display:flex;
+    margin-bottom: 10px;
+    min-height: 2rem;
+}
+
+.select-container {
+    display:flex;
+    margin-bottom: 10px;
+    height: 2rem;
+}
+
+.select-container select {
+    border: 0.15rem solid #e9ecef;
+    border-radius: 0 0.3rem 0.3rem 0;
+
+}
+
+.select-container #type-select {
+    border-radius: 0;
+}
+
+.ui-draggable .draggable-headline {
+    display:none;
+}
+
+.field-select-container .ui-draggable .draggable-controls,
+.field-select-container .ui-draggable .s-field-options,
+.field-select-container .ui-draggable .w-field-expression {
+    display: none;
+}
+
+.field-select-container .ui-draggable .draggable-headline {
+    display: flex;
+}
+
+.s-field-options > .col-6 {
+    padding-left: 1rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    margin-top: -0.7rem;
+    max-height: 10rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    overscroll-behavior-x: none;
+}
+
+.working-area .field-select-container .head {
+    border: 1px solid #e9ecef;
+    background-color: #918daf;
+    color: #ffffff;
+}
+
+.field-select-container .ui-draggable:nth-child(odd) .draggable-headline {
+    border: 1px solid #e9ecef;
+}
+
+.draggable-headline > .col-6 {
+    word-wrap:break-word;
+    text-align: justify;
+}
+
+#field-select-container {
+    overflow-y: scroll;
+    max-height: 33rem;
+    overflow-x: hidden;
+    overscroll-behavior-x: none;
+}
+
+.draggable-headline > .col-2{
+    text-align: center;
+    margin: auto;
+    height: 100%;
+    padding: 0;
+}
+
+.field-select-container .ui-draggable:nth-child(even) .draggable-headline {
+    border: 1px solid #e9ecef;
+    background-color: #e9ecef;
+}
+
+.working-area .field-select-container div div {
+    border: 1px solid #e9ecef;
+}
+
+.working-area .field-select-container .head .col-2 {
+    padding-left: 0.2rem;
+}
+
+.btn.cog {
+    height: 1.3rem;
+    width: 1.3rem;
+    padding:0;
+    background: url("/querybuilder/static/img/svg/cog.svg") no-repeat scroll 0 0 transparent;
+    background-size:cover;
+    margin-top: 0.3rem;
+    float: right;
+}
+
+.tab-content {
+    border: 0.15rem solid #e9ecef;
+    border-radius: 0 0 0.2rem 0.2rem;
+}
+
+.nav-tabs .nav-link {
+    background-color: #e9ecef;
+    border-radius: 0.2rem 0.2rem 0 0;
+    color: #000000;
+    margin-right:0.2rem
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #918daf;
+    color: #ffffff;
+}
+
+.selected-fields {
+    padding: 1rem 1rem;
+    height: 30rem;
+    overflow-y: scroll;
+}
+
+.selected-fields .ui-draggable {
+    width: 100%!important;
+    height: auto!important;
+}
+
+.ui-sortable-placeholder{
+    width: 100% !important;
+    border: 0.1rem solid #e9ecef;
+    visibility:visible!important;
+}
+
+.cog-selected {
+    background-color: #e9ecef;
+}
+
+.selected-fieldtype {
+    color:  #918daf;
+    display:inline-block;
+    margin-top: 0.3rem;
+}
+
+.delete-link {
+    color:  #918daf;
+    cursor: pointer;
+    display:inline-block;
+    margin-top: 0.3rem;
+}
+
+.row-container-droppable {
+    border: 0.15rem solid #e9ecef;
+    border-radius: 0 0 0.2rem 0.2rem;
+    min-height: 2rem;
+}
+
+.field-type-select {
+    position: absolute;
+    left: 96%;
+    top: 50%;
+    padding:0;
+    border: 0.1rem solid #e9ecef;
+    border-radius: 0.2rem;
+    background-color: #ffffff;
+    list-style: none;
+    display: none;
+    z-index: 100001;
+}
+
+.field-type-select li {
+    margin-bottom: 0.2rem;
+    padding: 0.2rem 1rem;
+    min-width: 8.3rem;
+}
+
+.field-type-select li:hover {
+    background-color: #e9ecef;
+}
+
+.demo-row {
+    margin-top: -0.7rem;
+    color: #918daf;
+}
+
+.demo-row .col-6 > div {
+    border-left: 0.1rem solid #e9ecef;
+    border-right: 0.1rem solid #e9ecef;
+    border-bottom: 0.1rem solid #e9ecef;
+    padding: 0.2rem;
+    border-radius: 0 0 0.3rem 0.3rem;
+    margin-bottom: 0.5rem;
+}
+
+#selectedFields-list .s-field-options,
+#selectedFields-list .col-3,
+#selectedFields-detail .s-field-options,
+#selectedFields-detail .col-3
+{
+    display: none;
+}
+
+#selectedFields-list .input-label,
+#selectedFields-detail .input-label{
+    float: none;
+    border-radius: 0.2rem;
+    width: 100%;
+}
+
+.ui-draggable {
+    cursor: pointer;
+}
+
+.notification-container {
+    margin-top:10px;
+}
+
+.notification-container > div {
+    display: none;
+}
+
+.collapse-pannel a {
+    display:block;
+    width: 100%;
+    border: 0.1rem solid #918daf;
+    border-radius: 0.1rem;
+    color: #918daf;
+    padding: 0.2rem;
+
+}
+
+.collapse-pannel a:hover {
+    text-decoration: none;
+    color: #918daf;
+}
+
+.panel-collapse span {
+    color: #918daf;
+    cursor: pointer;
+    margin-right: 1rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.5rem;
+    display:inline-block;
+}
+
+.user-select-container {
+    display: block!important;
+}
+
+#user-list {
+    border: 0.2rem solid #918daf;
+    background-color: #ffffff;
+    position:absolute;
+    width:92%;
+    z-index:1000;
+    padding: 0.2rem;
+    max-height:20rem;
+    overflow-y:scroll;
+}
+
+#alias-list {
+    border: 0.2rem solid #918daf;
+    background-color: #ffffff;
+    position:absolute;
+    width:92%;
+    z-index:1000;
+    padding: 0.2rem;
+    max-height:20rem;
+    overflow-y:scroll;
+}
+
+#alias-list span {
+    cursor:default;
+}
+
+.w-field-expression {
+    margin-bottom: 0.4rem;
+}

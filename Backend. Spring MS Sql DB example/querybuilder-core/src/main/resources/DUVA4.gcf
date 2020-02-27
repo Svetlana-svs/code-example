@@ -1,0 +1,12 @@
+; Diese Datei muss im selben Verzeichnis wie die EXE-Datei stehen.
+; Hier wird das Verzeichnis angegeben, in dem alle anderen (Konfigurations-) Dateien gesucht werden,
+; ggf. in Unterverzeichnissen
+
+; Not set slash on the end of an url or path!
+[NETWORK]
+DUVANetDir=C:\QB
+;DUVANetDir=/opt/tomcat/files
+
+[Registry]
+Profile=conf
+Alias=DUVA_MDB

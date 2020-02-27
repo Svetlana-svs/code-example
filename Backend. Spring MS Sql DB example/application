@@ -1,0 +1,67 @@
+#spring.freemarker.template-loader-path=classpath:/templates
+#spring.freemarker.suffix=.ftl
+
+# Project configuration
+spring.mvc.view.prefix=/view/
+spring.mvc.view.suffix=.jsp
+
+#server.servlet.context-path=/querybuilder
+#logging.level.org=DEBUG
+
+# Jpa configuration
+app.jpa.database-platform=org.hibernate.dialect.SQLServer2012Dialect
+app.jpa.show-sql=true
+# No change is made to the database structure.
+#spring.datasource.driverClassName=com.microsoft.sqlserver.jdbc.SQLServerDriver
+# DataSource 1
+app.datasource.database1.jdbcUrl=jdbc:sqlserver://192.168.16.13;databaseName=DUVA_MDB
+app.datasource.database1.driver-class-name=com.microsoft.sqlserver.jdbc.SQLServerDriver
+app.datasource.database1.username=SA
+app.datasource.database1.password=dsfnsf84rhDHNdsf234DMv
+# DataSource 2
+app.datasource.database2.jdbcUrl=jdbc:sqlserver://192.168.16.13;databaseName=DUVA_SDB
+app.datasource.database2.driver-class-name=com.microsoft.sqlserver.jdbc.SQLServerDriver
+app.datasource.database2.username=SA
+app.datasource.database2.password=dsfnsf84rhDHNdsf234DMv
+
+# Application configuration
+app.common.path.query-form=/opt/tomcat/files
+app.common.path.css-file=/opt/tomcat/files/css
+
+#app.common.path.query-form=C:\\QB
+#app.common.path.css-file=C:\\QBCss
+
+app.auth.user.role_admin.login=user001
+app.auth.user.role_admin.password=pgf5uh#Bx
+#app.auth.user.role_admin.password=p
+
+#app.database.db[0].name=Kindertageseinrichtungen in Freiburg
+#app.database.db[0].dt.role_admin.jdbcUrl=jdbc:sqlserver://192.168.16.13;databaseName=DUVA_MDB
+#app.database.db[0].dt.role_admin.driver-class-name=com.microsoft.sqlserver.jdbc.SQLServerDriver
+#app.database.db[0].dt.username=SA
+#app.database.db[0].dt.password=dsfnsf84rhDHNdsf234DMv
+#app.database.db[0].role_user.jdbcUrl=jdbc:sqlserver://192.168.16.13;databaseName=DUVA_SDB
+#app.database.db[0].role_user.driver-class-name=com.microsoft.sqlserver.jdbc.SQLServerDriver
+#app.database.db[1].dt.username=SA
+#app.database.db[1].dt.password=dsfnsf84rhDHNdsf234DMv
+
+
+app.db.name=Kindertageseinrichtungen in Freiburg
+app.db.role_admin.datasource.jdbcUrl=jdbc:sqlserver://192.168.16.13;databaseName=DUVA_MDB
+app.db.role_admin.datasource.driver-class-name=com.microsoft.sqlserver.jdbc.SQLServerDriver
+app.db.role_admin.datasource.username=SA
+app.db.role_admin.datasource.password=dsfnsf84rhDHNdsf234DMv
+app.db.role_user.datasource.jdbcUrl=jdbc:sqlserver://192.168.16.13;databaseName=DUVA_SDB
+app.db.role_user.datasource.driver-class-name=com.microsoft.sqlserver.jdbc.SQLServerDriver
+app.db.role_user.datasource.username=SA
+app.db.role_user.datasource.password=dsfnsf84rhDHNdsf234DMv
+
+app.db.db2.name=Kindertageseinrichtungen_in_Freiburg_2019
+app.db.db2.role_admin.datasource.jdbcUrl=jdbc:sqlserver://192.168.16.13;databaseName=DUVA_MDB
+app.db.db2.role_admin.datasource.driver-class-name=com.microsoft.sqlserver.jdbc.SQLServerDriver
+app.db.db2.role_admin.datasource.username=SA
+app.db.db2.role_admin.datasource.password=dsfnsf84rhDHNdsf234DMv
+app.db.db2.role_user.datasource.jdbcUrl=jdbc:sqlserver://192.168.16.13;databaseName=DUVA_SDB
+app.db.db2.role_user.datasource.driver-class-name=com.microsoft.sqlserver.jdbc.SQLServerDriver
+app.db.db2.role_user.datasource.username=SA
+app.db.db2.role_user.datasource.password=dsfnsf84rhDHNdsf234DMv

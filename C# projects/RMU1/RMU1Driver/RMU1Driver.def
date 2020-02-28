@@ -1,0 +1,6 @@
+; RMU1Driver.def : Declares the module parameters for the DLL.
+
+LIBRARY      "RMU1Driver"
+
+EXPORTS
+    ; Explicit exports can go here

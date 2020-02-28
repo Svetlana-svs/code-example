@@ -1,0 +1,233 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D98A6BAC-EDC0-4DFD-BECB-343A9C10D1DB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RMU1</RootNamespace>
+    <AssemblyName>RMU1</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <NoWin32Manifest>true</NoWin32Manifest>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.DirectX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.DirectX.Direct3D, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FBrightness.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FBrightness.Designer.cs">
+      <DependentUpon>FBrightness.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FData.Designer.cs">
+      <DependentUpon>FData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FDataEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FDataConversion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FDataSave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FDataScanning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FDataModification.cs" />
+    <Compile Include="FEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FEdit.Designer.cs">
+      <DependentUpon>FEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FEditThread.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FLaunch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FLaunch.Designer.cs">
+      <DependentUpon>FLaunch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FWait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FWait.designer.cs">
+      <DependentUpon>FWait.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FWarning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FWarning.designer.cs">
+      <DependentUpon>FWarning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FOptions.designer.cs">
+      <DependentUpon>FOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FBrightness.resx">
+      <DependentUpon>FBrightness.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FData.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FEdit.resx">
+      <DependentUpon>FEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FLaunch.resx">
+      <DependentUpon>FLaunch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FWait.resx">
+      <DependentUpon>FWait.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FWait.ru-RU.resx">
+      <DependentUpon>FWait.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FWarning.resx">
+      <DependentUpon>FWarning.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FOptions.resx">
+      <DependentUpon>FOptions.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="Resources\imgButtonShow.png" />
+    <None Include="Resources\imgButtonEnd.png" />
+    <None Include="Resources\imgButtonEdit.png" />
+    <None Include="Resources\imgButtonHelp.png" />
+    <None Include="Resources\imgButtonMin.png" />
+    <None Include="Resources\imgButtonOpen.png" />
+    <None Include="Resources\imgButtonPlus.png" />
+    <None Include="Resources\imgButtonSave.png" />
+    <None Include="Resources\imgBackground.png" />
+    <None Include="Resources\imgButtonBegin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ScrollBarExt\ScrollBarExt.csproj">
+      <Project>{8AD2E9FF-EBA2-44E4-B016-C53FD50D989D}</Project>
+      <Name>ScrollBarExt</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

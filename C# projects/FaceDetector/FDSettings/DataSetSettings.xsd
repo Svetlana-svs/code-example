@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetSettings" targetNamespace="http://tempuri.org/DataSetSettings.xsd" xmlns:mstns="http://tempuri.org/DataSetSettings.xsd" xmlns="http://tempuri.org/DataSetSettings.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetSettings" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DataSetSettings" msprop:Generator_DataSetName="DataSetSettings">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TableSettings" msprop:Generator_UserTableName="TableSettings" msprop:Generator_RowDeletedName="TableSettingsRowDeleted" msprop:Generator_RowChangedName="TableSettingsRowChanged" msprop:Generator_RowClassName="TableSettingsRow" msprop:Generator_RowChangingName="TableSettingsRowChanging" msprop:Generator_RowEvArgName="TableSettingsRowChangeEvent" msprop:Generator_RowEvHandlerName="TableSettingsRowChangeEventHandler" msprop:Generator_TableClassName="TableSettingsDataTable" msprop:Generator_TableVarName="tableTableSettings" msprop:Generator_RowDeletingName="TableSettingsRowDeleting" msprop:Generator_TablePropName="TableSettings">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Name" msprop:Generator_UserColumnName="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" type="xs:string" />
+              <xs:element name="Value" msprop:Generator_UserColumnName="Value" msprop:Generator_ColumnVarNameInTable="columnValue" msprop:Generator_ColumnPropNameInRow="Value" msprop:Generator_ColumnPropNameInTable="ValueColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Type" msprop:Generator_UserColumnName="Type" msprop:Generator_ColumnVarNameInTable="columnType" msprop:Generator_ColumnPropNameInRow="Type" msprop:Generator_ColumnPropNameInTable="TypeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Selitems" msprop:Generator_UserColumnName="Selitems" msprop:Generator_ColumnVarNameInTable="columnSelitems" msprop:Generator_ColumnPropNameInRow="Selitems" msprop:Generator_ColumnPropNameInTable="SelitemsColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="MinValue" msprop:Generator_UserColumnName="MinValue" msprop:Generator_ColumnPropNameInRow="MinValue" msprop:Generator_ColumnVarNameInTable="columnMinValue" msprop:Generator_ColumnPropNameInTable="MinValueColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="MaxValue" msprop:Generator_UserColumnName="MaxValue" msprop:Generator_ColumnPropNameInRow="MaxValue" msprop:Generator_ColumnVarNameInTable="columnMaxValue" msprop:Generator_ColumnPropNameInTable="MaxValueColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:TableSettings" />
+      <xs:field xpath="mstns:Name" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

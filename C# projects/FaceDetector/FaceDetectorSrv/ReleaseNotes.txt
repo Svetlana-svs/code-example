@@ -1,0 +1,13 @@
+
+Face Detector
+=====================
+
+Version - Date
+Description.
+
+
+1.0.1 - ??.??.2011
+Fixed ...
+
+1.0.0 - ??.??.2011
+Created.

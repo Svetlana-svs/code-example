@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<settings>
+  <geviscope>
+    <add stname="hostname" stvalue="localhost" sttype="text" />
+    <add stname="login" stvalue="sysadmin" sttype="text" />
+    <add stname="password" stvalue="masterkey" sttype="text" />
+  </geviscope>
+  <verilook>
+    <detection>
+      <add stname="ConfidenceThr" stvalue="50" sttype="range" minval="0" maxval="100" />
+      <add stname="QualityThr" stvalue="128" sttype="range" minval="0" maxval="255" />
+      <add stname="FavorLargest" stvalue="false" sttype="bool" />
+      <add stname="MaxIOD" stvalue="4000" sttype="range" minval="10" maxval="10000" />
+      <add stname="MinIOD" stvalue="40" sttype="range" minval="10" maxval="10000" />
+      <add stname="UseLivnCheck" stvalue="false" sttype="bool" />
+      <add stname="LivenessThr" stvalue="50" sttype="range" minval="0" maxval="100" />
+      <add stname="MaxRollAngleDev" stvalue="15" sttype="range" minval="0" maxval="180" />
+      <add stname="RecPerTempl" stvalue="4" sttype="range" minval="1" maxval="16" />
+    </detection>
+    <recognition>
+      <add stname="MatchSpeed" stvalue="low" sttype="select" selitems="low;high" />
+    </recognition>
+  </verilook>
+  <database>
+    <add stname="hostname" stvalue="(local)" sttype="text" />
+    <add stname="intagrated" stvalue="true" sttype="bool" />
+    <add stname="login" stvalue="" sttype="text" />
+    <add stname="password" stvalue="" sttype="text" />
+  </database>
+  <channels>
+    <ch0>
+      <add stname="channel" stvalue="Channel 001" sttype="text" />
+      <add stname="enabled" stvalue="true" sttype="bool" />
+      <add stname="match" stvalue="true" sttype="bool" />
+    </ch0>
+  </channels>
+</settings>
+<!--<add stname="MatchThr" stvalue="60" sttype="range" minval="0" maxval="100" />-->
+<!--<add stname="testselnull" stvalue="bla" sttype="selectnull" selitems="bli;blo;bla;blu" />-->
+<!--<add stname="testcounter" stvalue="97" sttype="counter" />-->
